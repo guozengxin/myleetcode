@@ -10,10 +10,12 @@ class Solution(object):
         for i in xrange(0, size/2):
             for j in xrange(i, size-1-i):
                 t = matrix[i][j]
-                matrix[i][j] = matrix[size-j-1][i]
-                matrix[size-j-1][i] = matrix[size-i-1][size-j-1]
-                matrix[size-i-1][size-j-1] = matrix[j][size-i-1]
-                matrix[j][size-i-1]= t
+                jj = size-j-1
+                ii = size-i-1
+                matrix[i][j] = matrix[jj][i]
+                matrix[jj][i] = matrix[ii][jj]
+                matrix[ii][jj] = matrix[j][ii]
+                matrix[j][ii]= t
 
 
 matrix = [
